@@ -2,10 +2,8 @@
 using LimbaBackOfficeData.DTOs;
 using LimbaBackOfficeData.Models;
 using LimbaBackOfficeData.RepositoryInterfaces;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace LimbaBackOffice.Services
 {
@@ -71,6 +69,29 @@ namespace LimbaBackOffice.Services
         public bool Delete(int id)
         {
             return _respository.Delete(id);
+        }
+
+        public AppUserDTO GetAppUserByEmail(string appUserEmail)
+        {
+            // check if method exists
+            var appUser = _respository.GetAppUserByEmail(appUserEmail);
+            if (appUser == null)
+            {
+                return null;
+            }
+
+            // Convert to DTO
+            var appUserDTO = new AppUserDTO()
+            {
+                Id = appUser.Id,
+                Email = appUser.Email,
+                Username = appUser.Username,
+                UserFirstName = appUser.UserFirstName,
+                UserLastName = appUser.UserLastName,
+                IsActive = appUser.IsActive
+            };
+
+            return appUserDTO;
         }
     }
 }

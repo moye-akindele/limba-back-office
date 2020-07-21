@@ -1,17 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
-// using System.Web.Http;
-using LimbaBackOffice.ServiceInterfaces;
+﻿using LimbaBackOffice.ServiceInterfaces;
 using LimbaBackOfficeData.DTOs;
 using LimbaBackOfficeData.Models;
-using LimbaBackOfficeData.Repositories;
-using LimbaBackOfficeData.RepositoryInterfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
+using System;
+using System.Collections.Generic;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -42,14 +34,8 @@ namespace LimbaBackOffice.Controllers
             AppUserDTO item = _service.Get(id);
             if (item == null)
             {
-                //var resp = new HttpResponseMessage(HttpStatusCode.NotFound)
-                //{
-                //    Content = new StringContent(string.Format("No product with ID = {0}", id)),
-                //    ReasonPhrase = "Product ID Not Found"
-                //};
-                //throw new HttpResponseException(resp);
+                throw new ArgumentException($"No appUser found with Id {id}.");
             }
-
             return item;
         }
 
@@ -57,7 +43,12 @@ namespace LimbaBackOffice.Controllers
         [HttpPost]
         public void Post(AppUser appUser)
         {
-            _service.Create(appUser);
+            var createdNewUser = _service.Create(appUser);
+
+            if (createdNewUser == false)
+            {
+                throw new ArgumentException($"Failed to create new user.");
+            }
         }
 
         // PUT api/<AppUsersController>/5
@@ -73,6 +64,18 @@ namespace LimbaBackOffice.Controllers
         public void Delete(int id)
         {
             _service.Delete(id);
+        }
+
+        // GET: api/<AppUsersController>
+        [HttpGet("email")]
+        public AppUserDTO GetAppUserByEmail(string appUserEmail)
+        {
+            AppUserDTO item = _service.GetAppUserByEmail(appUserEmail);
+            if (item == null)
+            {
+                throw new ArgumentException($"No appUser found with email - {appUserEmail}.");
+            }
+            return item;
         }
     }
 }

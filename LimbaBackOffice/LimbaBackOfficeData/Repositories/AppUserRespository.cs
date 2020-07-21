@@ -2,13 +2,10 @@
 using LimbaBackOfficeData.Models;
 using LimbaBackOfficeData.RepositoryInterfaces;
 using Microsoft.Extensions.Configuration;
-using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Text;
 
 namespace LimbaBackOfficeData.Repositories
 {
@@ -37,15 +34,20 @@ namespace LimbaBackOfficeData.Repositories
 
 		public bool Create(AppUser ourAppUser)
 		{
+			// Do not create the user if the email is already in use.
+			if (GetAppUserByEmail(ourAppUser.Email) != null)
+			{ 
+				return false;
+			}
+
 			string queryText = @"INSERT AppUser([Email],[Username],[UserFirstName],[UserLastName],[IsActive]) 
 			values(@Email, @Username, @UserFirstName, @UserLastName, @IsActive)";
 
 			int rowsAffected = _connection.Execute(queryText, ourAppUser);
 
             if (rowsAffected > 0)
-            {
-                return true;
-            }
+            { return true; }
+
             return false;
         }
 
@@ -80,6 +82,13 @@ namespace LimbaBackOfficeData.Repositories
 				return true;
 			}
 			return false;
+		}
+
+		public AppUser GetAppUserByEmail(string appUserEmail)
+		{
+			string queryText = $"SELECT * FROM AppUser WHERE Email = '{appUserEmail}'";
+			AppUser seletedUser = _connection.Query<AppUser>(queryText).FirstOrDefault();
+			return seletedUser;
 		}
 	}
 }

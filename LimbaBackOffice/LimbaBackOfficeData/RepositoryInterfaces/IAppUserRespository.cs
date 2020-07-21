@@ -1,7 +1,5 @@
 ﻿using LimbaBackOfficeData.Models;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace LimbaBackOfficeData.RepositoryInterfaces
 {
@@ -12,5 +10,6 @@ namespace LimbaBackOfficeData.RepositoryInterfaces
         bool Create(AppUser ourAppUser);
         bool Update(AppUser ourAppUser);
         bool Delete(int appUserId);
+        AppUser GetAppUserByEmail(string appUserEmail);
     }
 }

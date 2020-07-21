@@ -1,9 +1,9 @@
 C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOfficeData\bin\Debug\netcoreapp3.1\LimbaBackOfficeData.deps.json
 C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOfficeData\bin\Debug\netcoreapp3.1\LimbaBackOfficeData.dll
 C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOfficeData\bin\Debug\netcoreapp3.1\LimbaBackOfficeData.pdb
-C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOfficeData\obj\Debug\netcoreapp3.1\LimbaBackOfficeData.csprojAssemblyReference.cache
 C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOfficeData\obj\Debug\netcoreapp3.1\LimbaBackOfficeData.AssemblyInfoInputs.cache
 C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOfficeData\obj\Debug\netcoreapp3.1\LimbaBackOfficeData.AssemblyInfo.cs
+C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOfficeData\obj\Debug\netcoreapp3.1\LimbaBackOfficeData.csproj.CoreCompileInputs.cache
 C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOfficeData\obj\Debug\netcoreapp3.1\LimbaBackOfficeData.dll
 C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOfficeData\obj\Debug\netcoreapp3.1\LimbaBackOfficeData.pdb
-C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOfficeData\obj\Debug\netcoreapp3.1\LimbaBackOfficeData.csproj.CoreCompileInputs.cache
+C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOfficeData\obj\Debug\netcoreapp3.1\LimbaBackOfficeData.csprojAssemblyReference.cache

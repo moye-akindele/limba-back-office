@@ -1,9 +1,6 @@
 ﻿using LimbaBackOfficeData.DTOs;
 using LimbaBackOfficeData.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace LimbaBackOffice.ServiceInterfaces
 {
@@ -14,5 +11,6 @@ namespace LimbaBackOffice.ServiceInterfaces
         bool Create(AppUser seat);
         bool Update(AppUser seat);
         bool Delete(int id);
+        AppUserDTO GetAppUserByEmail(string appUserEmail);
     }
 }

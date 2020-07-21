@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace LimbaBackOfficeData.Models
+﻿namespace LimbaBackOfficeData.Models
 {
     public class AppUser
     {
