@@ -25,6 +25,7 @@
       "LimbaBackOffice/1.0.0": {
         "dependencies": {
           "LimbaBackOfficeData": "1.0.0",
+          "LimbaBackOfficeShared": "1.0.0",
           "System.Configuration.ConfigurationManager": "4.7.0",
           "System.Data.SqlClient": "4.8.1",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
@@ -498,6 +499,14 @@
         },
         "compile": {
           "LimbaBackOfficeData.dll": {}
+        }
+      },
+      "LimbaBackOfficeShared/1.0.0": {
+        "runtime": {
+          "LimbaBackOfficeShared.dll": {}
+        },
+        "compile": {
+          "LimbaBackOfficeShared.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
@@ -2322,6 +2331,11 @@
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
     },
     "LimbaBackOfficeData/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LimbaBackOfficeShared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

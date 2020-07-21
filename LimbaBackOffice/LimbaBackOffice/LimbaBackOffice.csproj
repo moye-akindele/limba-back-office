@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\LimbaBackOfficeData\LimbaBackOfficeData.csproj" />
+    <ProjectReference Include="..\LimbaBackOfficeShared\LimbaBackOfficeShared.csproj" />
   </ItemGroup>
 
 </Project>

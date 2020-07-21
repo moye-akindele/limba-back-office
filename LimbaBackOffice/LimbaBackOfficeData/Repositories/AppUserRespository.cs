@@ -40,8 +40,8 @@ namespace LimbaBackOfficeData.Repositories
 				return false;
 			}
 
-			string queryText = @"INSERT AppUser([Email],[Username],[UserFirstName],[UserLastName],[IsActive]) 
-			values(@Email, @Username, @UserFirstName, @UserLastName, @IsActive)";
+			string queryText = @"INSERT AppUser([Email],[Password],[Username],[UserFirstName],[UserLastName],[IsActive]) 
+			values(@Email, @Password, @Username, @UserFirstName, @UserLastName, @IsActive)";
 
 			int rowsAffected = _connection.Execute(queryText, ourAppUser);
 
@@ -56,6 +56,7 @@ namespace LimbaBackOfficeData.Repositories
 			string queryText = @"UPDATE [AppUser] 
 								SET 
 								[Email] = @Email,
+								[Password] = @Password,
 								[Username] = @Username,
 								[UserFirstName] = @UserFirstName,
 								[UserLastName] = @UserLastName,

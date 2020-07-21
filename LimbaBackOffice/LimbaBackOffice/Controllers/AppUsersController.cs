@@ -1,6 +1,7 @@
 ﻿using LimbaBackOffice.ServiceInterfaces;
 using LimbaBackOfficeData.DTOs;
 using LimbaBackOfficeData.Models;
+using LimbaBackOfficeShared;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;

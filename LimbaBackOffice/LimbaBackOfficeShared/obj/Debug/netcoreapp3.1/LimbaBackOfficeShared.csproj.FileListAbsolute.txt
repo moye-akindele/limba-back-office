@@ -1,0 +1,9 @@
+C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOfficeShared\bin\Debug\netcoreapp3.1\LimbaBackOfficeShared.deps.json
+C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOfficeShared\bin\Debug\netcoreapp3.1\LimbaBackOfficeShared.dll
+C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOfficeShared\bin\Debug\netcoreapp3.1\LimbaBackOfficeShared.pdb
+C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOfficeShared\obj\Debug\netcoreapp3.1\LimbaBackOfficeShared.csprojAssemblyReference.cache
+C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOfficeShared\obj\Debug\netcoreapp3.1\LimbaBackOfficeShared.AssemblyInfoInputs.cache
+C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOfficeShared\obj\Debug\netcoreapp3.1\LimbaBackOfficeShared.AssemblyInfo.cs
+C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOfficeShared\obj\Debug\netcoreapp3.1\LimbaBackOfficeShared.csproj.CoreCompileInputs.cache
+C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOfficeShared\obj\Debug\netcoreapp3.1\LimbaBackOfficeShared.dll
+C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOfficeShared\obj\Debug\netcoreapp3.1\LimbaBackOfficeShared.pdb

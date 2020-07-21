@@ -53,3 +53,5 @@ C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\o
 C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\bin\Debug\netcoreapp3.1\LimbaBackOffice.pdb
 C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\obj\Debug\netcoreapp3.1\LimbaBackOffice.dll
 C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\obj\Debug\netcoreapp3.1\LimbaBackOffice.pdb
+C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\bin\Debug\netcoreapp3.1\LimbaBackOfficeShared.dll
+C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\bin\Debug\netcoreapp3.1\LimbaBackOfficeShared.pdb

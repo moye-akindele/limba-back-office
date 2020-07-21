@@ -2,8 +2,11 @@
 using LimbaBackOfficeData.DTOs;
 using LimbaBackOfficeData.Models;
 using LimbaBackOfficeData.RepositoryInterfaces;
+using LimbaBackOfficeShared;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace LimbaBackOffice.Services
 {
@@ -24,6 +27,7 @@ namespace LimbaBackOffice.Services
                               {
                                   Id = appUser.Id,
                                   Email = appUser.Email,
+                                  Password = appUser.Password,
                                   Username = appUser.Username,
                                   UserFirstName = appUser.UserFirstName,
                                   UserLastName = appUser.UserLastName,
@@ -35,7 +39,7 @@ namespace LimbaBackOffice.Services
 
         public AppUserDTO Get(int id)
         {
-            // check if method exists
+            // check if user exists
             var appUser = _respository.Get(id);
             if (appUser == null)
             {
@@ -47,6 +51,7 @@ namespace LimbaBackOffice.Services
             {
                 Id = appUser.Id,
                 Email = appUser.Email,
+                Password = appUser.Password,
                 Username = appUser.Username,
                 UserFirstName = appUser.UserFirstName,
                 UserLastName = appUser.UserLastName,
@@ -58,11 +63,29 @@ namespace LimbaBackOffice.Services
 
         public bool Create(AppUser appUser)
         {
+            // Decode password from front-end.
+            byte[] data = Convert.FromBase64String(appUser.Password);
+            string decodedString = Encoding.UTF8.GetString(data);
+
+            // Encode password using back-end encoding ready for the database.
+            PasswordHash hash = new PasswordHash(decodedString);
+            byte[] hashBytes = hash.ToArray();
+            appUser.Password = Convert.ToBase64String(hashBytes);
+
             return _respository.Create(appUser);
         }
 
         public bool Update(AppUser appUser)
         {
+            // Decode password from front-end.
+            byte[] data = Convert.FromBase64String(appUser.Password);
+            string decodedString = Encoding.UTF8.GetString(data);
+
+            // Encode password using back-end encoding ready for the database.
+            PasswordHash hash = new PasswordHash(decodedString);
+            byte[] hashBytes = hash.ToArray();
+            appUser.Password = Convert.ToBase64String(hashBytes);
+
             return _respository.Update(appUser);
         }
 
@@ -85,6 +108,7 @@ namespace LimbaBackOffice.Services
             {
                 Id = appUser.Id,
                 Email = appUser.Email,
+                Password = appUser.Password,
                 Username = appUser.Username,
                 UserFirstName = appUser.UserFirstName,
                 UserLastName = appUser.UserLastName,
