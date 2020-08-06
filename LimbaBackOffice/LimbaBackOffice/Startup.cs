@@ -10,6 +10,9 @@ using Microsoft.Extensions.Hosting;
 using System.Data;
 using System.Data.SqlClient;
 
+
+
+
 namespace LimbaBackOffice
 {
     public class Startup
@@ -29,8 +32,10 @@ namespace LimbaBackOffice
             _db = new SqlConnection(Configuration["Data:DefaultConnection:ConnectionString"]);
 
             services.AddScoped<IAppUserService, AppUserService>();
+            services.AddScoped<IWorkSpaceService, WorkSpaceService>();
 
             services.AddScoped<IAppUserRespository, AppUserRespository>();
+            services.AddScoped<IWorkSpaceRespository, WorkSpaceRespository>();
 
             services.AddControllers();
         }

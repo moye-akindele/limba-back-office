@@ -21,8 +21,6 @@ C:\Users\Moye\source\repos\limba-back-office\LimbaBackOffice\LimbaBackOffice\obj
 C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\obj\Debug\netcoreapp3.1\LimbaBackOffice.csprojAssemblyReference.cache
 C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\obj\Debug\netcoreapp3.1\LimbaBackOffice.AssemblyInfoInputs.cache
 C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\obj\Debug\netcoreapp3.1\LimbaBackOffice.AssemblyInfo.cs
-C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\obj\Debug\netcoreapp3.1\LimbaBackOffice.csproj.CoreCompileInputs.cache
-C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\obj\Debug\netcoreapp3.1\LimbaBackOffice.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -55,3 +53,15 @@ C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\o
 C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\obj\Debug\netcoreapp3.1\LimbaBackOffice.pdb
 C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\bin\Debug\netcoreapp3.1\LimbaBackOfficeShared.dll
 C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\bin\Debug\netcoreapp3.1\LimbaBackOfficeShared.pdb
+C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\bin\Debug\netcoreapp3.1\Microsoft.Office.Interop.Excel.dll
+C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\obj\Debug\netcoreapp3.1\LimbaBackOffice.csproj.CoreCompileInputs.cache
+C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\obj\Debug\netcoreapp3.1\LimbaBackOffice.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\bin\Debug\netcoreapp3.1\Antlr3.Runtime.dll

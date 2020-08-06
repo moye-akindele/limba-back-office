@@ -1,7 +1,6 @@
 ﻿using LimbaBackOffice.ServiceInterfaces;
 using LimbaBackOfficeData.DTOs;
 using LimbaBackOfficeData.Models;
-using LimbaBackOfficeShared;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -44,9 +43,9 @@ namespace LimbaBackOffice.Controllers
         [HttpPost]
         public void Post(AppUser appUser)
         {
-            var createdNewUser = _service.Create(appUser);
+            var createdEntry = _service.Create(appUser);
 
-            if (createdNewUser == false)
+            if (createdEntry == false)
             {
                 throw new ArgumentException($"Failed to create new user.");
             }
