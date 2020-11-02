@@ -28,9 +28,27 @@ namespace LimbaBackOffice.Services
                                   Name = workSpace.Name,
                                   Description = workSpace.Description,
                                   CreatorId = workSpace.CreatorId,
-                                  SpaceOwnerId = workSpace.SpaceOwnerId,
+                                  OwnerId = workSpace.OwnerId,
                                   IsActive = workSpace.IsActive
                               };
+
+            return workSpaceList.ToList();
+        }
+
+        public List<WorkSpaceDTO> GetUserWorkSpaces(int appUserId)
+        {
+            var workSpaces = _respository.GetUserWorkSpaces(appUserId);
+
+            var workSpaceList = from workSpace in workSpaces
+                                select new WorkSpaceDTO()
+                                {
+                                    Id = workSpace.Id,
+                                    Name = workSpace.Name,
+                                    Description = workSpace.Description,
+                                    CreatorId = workSpace.CreatorId,
+                                    OwnerId = workSpace.OwnerId,
+                                    IsActive = workSpace.IsActive
+                                };
 
             return workSpaceList.ToList();
         }
@@ -51,7 +69,7 @@ namespace LimbaBackOffice.Services
                 Name = workSpace.Name,
                 Description = workSpace.Description,
                 CreatorId = workSpace.CreatorId,
-                SpaceOwnerId = workSpace.SpaceOwnerId,
+                OwnerId = workSpace.OwnerId,
                 IsActive = workSpace.IsActive
             };
 
@@ -65,12 +83,26 @@ namespace LimbaBackOffice.Services
 
         public bool Update(WorkSpace seat)
         {
-            throw new NotImplementedException();
+            bool rowsAffected = _respository.Update(seat);
+
+            if (rowsAffected)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            bool rowsAffected = _respository.Delete(id);
+
+            if (rowsAffected)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }

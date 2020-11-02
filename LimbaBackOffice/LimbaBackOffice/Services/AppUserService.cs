@@ -68,7 +68,7 @@ namespace LimbaBackOffice.Services
             string decodedString = Encoding.UTF8.GetString(data);
 
             // Encode password using back-end encoding ready for the database.
-            PasswordHash hash = new PasswordHash(decodedString);
+            PasswordHash hash = new PasswordHash(appUser.Password);
             byte[] hashBytes = hash.ToArray();
             appUser.Password = Convert.ToBase64String(hashBytes);
 

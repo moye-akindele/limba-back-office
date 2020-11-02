@@ -18,6 +18,7 @@ namespace LimbaBackOffice
     public class Startup
     {
         private IDbConnection _db = new SqlConnection();
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
         public Startup(IConfiguration configuration)
         {
@@ -31,8 +32,20 @@ namespace LimbaBackOffice
         {
             _db = new SqlConnection(Configuration["Data:DefaultConnection:ConnectionString"]);
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                  builder =>
+                                  {
+                                      builder.WithOrigins("http://localhost:4200")
+                                      .AllowAnyHeader()
+                                      .AllowAnyMethod();
+                                  });
+            });
+
             services.AddScoped<IAppUserService, AppUserService>();
             services.AddScoped<IWorkSpaceService, WorkSpaceService>();
+            services.AddScoped<IAuthService, AuthService>();
 
             services.AddScoped<IAppUserRespository, AppUserRespository>();
             services.AddScoped<IWorkSpaceRespository, WorkSpaceRespository>();
@@ -51,6 +64,8 @@ namespace LimbaBackOffice
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(MyAllowSpecificOrigins);
 
             app.UseAuthorization();
 

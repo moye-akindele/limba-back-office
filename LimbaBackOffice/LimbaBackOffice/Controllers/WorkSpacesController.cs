@@ -29,6 +29,18 @@ namespace LimbaBackOffice.Controllers
             return _service.Get();
         }
 
+        // GET: api/<AppUsersController>
+        [HttpGet("UserWorkSpace/{appUserId}")]
+        public List<WorkSpaceDTO> GetUserWorkSpaces(int appUserId)
+        {
+            var item = _service.GetUserWorkSpaces(appUserId);
+            if (item == null)
+            {
+                throw new ArgumentException($"No work space found for selected user.");
+            }
+            return item;
+        }
+
         // GET api/<WorkSpacesController>/5
         [HttpGet("{id}")]
         public WorkSpaceDTO Get(int id)
@@ -43,7 +55,7 @@ namespace LimbaBackOffice.Controllers
 
         // POST api/<WorkSpacesController>
         [HttpPost]
-        public void Post(WorkSpace workSpace)
+        public bool Post(WorkSpace workSpace)
         {
             var createdEntry = _service.Create(workSpace);
 
@@ -51,13 +63,22 @@ namespace LimbaBackOffice.Controllers
             {
                 throw new ArgumentException($"Failed to create new work space.");
             }
+
+            return createdEntry;
         }
 
         // PUT api/<WorkSpacesController>/5
-        [HttpPut("{id}")]
-        public void Put(WorkSpace workSpace)
+        [HttpPut]
+        public bool Put(WorkSpace workSpace)
         {
-            _service.Update(workSpace);
+            var retrievedEntry = _service.Update(workSpace);
+
+            if (retrievedEntry == false)
+            {
+                throw new ArgumentException($"Failed to update work space.");
+            }
+
+            return retrievedEntry;
         }
 
         // DELETE api/<WorkSpacesController>/5

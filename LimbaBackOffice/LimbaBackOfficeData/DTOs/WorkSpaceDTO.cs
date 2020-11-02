@@ -8,7 +8,7 @@ namespace LimbaBackOfficeData.DTOs
         public string Name { get; set; }
         public string Description { get; set; }
         public int CreatorId { get; set; }
-        public int SpaceOwnerId { get; set; }
+        public int OwnerId { get; set; }
         public bool IsActive { get; set; }
     }
 }

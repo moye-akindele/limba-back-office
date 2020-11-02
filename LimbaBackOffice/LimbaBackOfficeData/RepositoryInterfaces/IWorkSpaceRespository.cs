@@ -8,6 +8,7 @@ namespace LimbaBackOfficeData.RepositoryInterfaces
     public interface IWorkSpaceRespository
     {
         List<WorkSpace> Get();
+        List<WorkSpace> GetUserWorkSpaces(int appUserId);
         WorkSpace Get(int workSpaceId);
         bool Create(WorkSpace ourAppUser);
         bool Update(WorkSpace ourAppUser);
