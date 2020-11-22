@@ -19,7 +19,7 @@ CREATE TABLE [WorkSpace](
 	[Name] [varchar](50) NULL,
 	[Description] [varchar](150) NULL,
 	[CreatorId] [int] NULL,
-	[OwnerId] [int] NULL,
+	[IsActive] [bit] NOT NULL,
 
  CONSTRAINT [PK_WorkSpace] PRIMARY KEY CLUSTERED
 (

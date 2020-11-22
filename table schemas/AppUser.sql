@@ -1,7 +1,7 @@
 USE [LimbaBackOfficeDB]
 GO
 
-/****** Object:  Table [AppUser]  ******/
+/****** Object: Table [AppUser]  ******/
 SET ANSI_NULLS ON
 GO
 
@@ -18,14 +18,12 @@ CREATE TABLE [AppUser](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[Email] [varchar](50) NULL,
 	[Password] [varchar](50) NULL,
-	[UserName] [varchar](50) NULL,
-	[UserFirstName] [varchar](50) NULL,
-	[UserLastName] [varchar](50) NULL,
+	[FirstName] [varchar](50) NULL,
+	[LastName] [varchar](50) NULL,
 	[IsActive] [bit] NOT NULL,
+	[ForcePasswordReset] [bit] Not NULL DEFAULT 0,
 	--[LastLogin] [varchar](50) NULL,
 	--[Status] [varchar](50) NULL,
-	--[PermissionGroups] [varchar](50) NULL,
-	--[WorkGroupList] [varchar](50) NULL,
 
  CONSTRAINT [PK_AppUser] PRIMARY KEY CLUSTERED
 (
@@ -38,6 +36,6 @@ GO
 SET ANSI_PADDING OFF
 GO
 
-/****** End:  Table [AppUser]  ******/
+/****** End: Table [AppUser]  ******/
 
 

@@ -1,7 +1,13 @@
 using LimbaBackOffice.ServiceInterfaces;
+using LimbaBackOffice.ServiceInterfaces.ReferencialAsset;
+using LimbaBackOffice.ServiceInterfaces.WorkSpace;
 using LimbaBackOffice.Services;
+using LimbaBackOffice.Services.ReferencialAsset;
+using LimbaBackOffice.Services.WorkSpaceAsset;
 using LimbaBackOfficeData.Repositories;
 using LimbaBackOfficeData.RepositoryInterfaces;
+using LimbaBackOfficeData.RepositoryInterfaces.ReferencialAsset;
+using LimbaBackOfficeData.RepositoryInterfaces.WorkSpaceAsset;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -43,12 +49,16 @@ namespace LimbaBackOffice
                                   });
             });
 
+            services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IAppUserService, AppUserService>();
             services.AddScoped<IWorkSpaceService, WorkSpaceService>();
-            services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<IDepartmentService, DepartmentService>();
+            services.AddScoped<IWorkSpaceUserService, WorkSpaceUserService>();
 
             services.AddScoped<IAppUserRespository, AppUserRespository>();
             services.AddScoped<IWorkSpaceRespository, WorkSpaceRespository>();
+            services.AddScoped<IDepartmentRespository, DepartmentRespository>();
+            services.AddScoped<IWorkSpaceUserRepository, WorkSpaceUserRepository>();
 
             services.AddControllers();
         }

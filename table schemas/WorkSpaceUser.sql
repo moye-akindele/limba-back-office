@@ -18,6 +18,9 @@ CREATE TABLE [WorkSpaceUser](
 	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[WorkSpaceId] [int] NOT NULL,
 	[AppUserId] [int] NOT NULL,
+	[Position] [varchar](50) NULL,
+	[DepartmentId] [int] NULL,
+	[AccessLevel] [int] NOT NULL,
 
  CONSTRAINT [PK_WorkSpaceUser] PRIMARY KEY CLUSTERED
 (
