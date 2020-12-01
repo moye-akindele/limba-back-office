@@ -55,7 +55,6 @@ namespace LimbaBackOffice.Controllers
 
         // PUT api/<AppUsersController>/5
         [HttpPut("{id}")]
-        //public void Put(int id, AppUser user)
         public void Put(AppUser appUser)
         {
             _service.Update(appUser);

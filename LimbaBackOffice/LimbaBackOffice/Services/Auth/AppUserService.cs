@@ -13,6 +13,7 @@ namespace LimbaBackOffice.Services
     public class AppUserService : IAppUserService
     {
         private readonly IAppUserRespository _respository;
+
         public AppUserService(IAppUserRespository respository)
         {
             _respository = respository;

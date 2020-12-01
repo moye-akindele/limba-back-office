@@ -1,10 +1,12 @@
 using LimbaBackOffice.ServiceInterfaces;
 using LimbaBackOffice.ServiceInterfaces.ReferencialAsset;
 using LimbaBackOffice.ServiceInterfaces.WorkSpace;
+using LimbaBackOffice.ServiceInterfaces.WorkSpaceAsset;
 using LimbaBackOffice.Services;
 using LimbaBackOffice.Services.ReferencialAsset;
 using LimbaBackOffice.Services.WorkSpaceAsset;
 using LimbaBackOfficeData.Repositories;
+using LimbaBackOfficeData.Repositories.WorkSpaceAsset;
 using LimbaBackOfficeData.RepositoryInterfaces;
 using LimbaBackOfficeData.RepositoryInterfaces.ReferencialAsset;
 using LimbaBackOfficeData.RepositoryInterfaces.WorkSpaceAsset;
@@ -54,11 +56,13 @@ namespace LimbaBackOffice
             services.AddScoped<IWorkSpaceService, WorkSpaceService>();
             services.AddScoped<IDepartmentService, DepartmentService>();
             services.AddScoped<IWorkSpaceUserService, WorkSpaceUserService>();
+            services.AddScoped<ITaskLogService, TaskLogService>();
 
             services.AddScoped<IAppUserRespository, AppUserRespository>();
             services.AddScoped<IWorkSpaceRespository, WorkSpaceRespository>();
             services.AddScoped<IDepartmentRespository, DepartmentRespository>();
             services.AddScoped<IWorkSpaceUserRepository, WorkSpaceUserRepository>();
+            services.AddScoped<ITaskLogRepository, TaskLogRepository>();
 
             services.AddControllers();
         }

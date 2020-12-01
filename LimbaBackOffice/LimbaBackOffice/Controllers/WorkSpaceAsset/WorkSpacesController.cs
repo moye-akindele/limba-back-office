@@ -30,7 +30,7 @@ namespace LimbaBackOffice.Controllers
         }
 
         // GET: api/<AppUsersController>
-        [HttpGet("UserWorkSpace/{appUserId}")]
+        [HttpGet("userWorkSpace/{appUserId}")]
         public List<WorkSpaceDTO> GetUserWorkSpaces(int appUserId)
         {
             var item = _service.GetUserWorkSpaces(appUserId);
