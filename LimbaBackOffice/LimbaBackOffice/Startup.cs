@@ -10,16 +10,16 @@ using LimbaBackOfficeData.Repositories.WorkSpaceAsset;
 using LimbaBackOfficeData.RepositoryInterfaces;
 using LimbaBackOfficeData.RepositoryInterfaces.ReferencialAsset;
 using LimbaBackOfficeData.RepositoryInterfaces.WorkSpaceAsset;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using System.Data;
 using System.Data.SqlClient;
-
-
-
+using System.Text;
 
 namespace LimbaBackOffice
 {
@@ -39,6 +39,31 @@ namespace LimbaBackOffice
         public void ConfigureServices(IServiceCollection services)
         {
             _db = new SqlConnection(Configuration["Data:DefaultConnection:ConnectionString"]);
+            var secretKey = Configuration["Data:IssuerSignInKey"];
+
+            services.AddAuthentication(options =>
+            {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(options =>
+            {
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+
+                    //ValidIssuer = "",
+                    //ValidAudience = "",
+
+                    ValidIssuer = Configuration["Data:baseUrl"],
+                    ValidAudience = Configuration["Data:baseUrl"],
+
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey))
+                };
+            });
 
             services.AddCors(options =>
             {
@@ -51,18 +76,8 @@ namespace LimbaBackOffice
                                   });
             });
 
-            services.AddScoped<IAuthService, AuthService>();
-            services.AddScoped<IAppUserService, AppUserService>();
-            services.AddScoped<IWorkSpaceService, WorkSpaceService>();
-            services.AddScoped<IDepartmentService, DepartmentService>();
-            services.AddScoped<IWorkSpaceUserService, WorkSpaceUserService>();
-            services.AddScoped<ITaskLogService, TaskLogService>();
-
-            services.AddScoped<IAppUserRespository, AppUserRespository>();
-            services.AddScoped<IWorkSpaceRespository, WorkSpaceRespository>();
-            services.AddScoped<IDepartmentRespository, DepartmentRespository>();
-            services.AddScoped<IWorkSpaceUserRepository, WorkSpaceUserRepository>();
-            services.AddScoped<ITaskLogRepository, TaskLogRepository>();
+            AddServices(services);
+            AddRepositories(services);
 
             services.AddControllers();
         }
@@ -79,6 +94,8 @@ namespace LimbaBackOffice
 
             app.UseRouting();
 
+            app.UseAuthentication();
+
             app.UseCors(MyAllowSpecificOrigins);
 
             app.UseAuthorization();
@@ -87,6 +104,27 @@ namespace LimbaBackOffice
             {
                 endpoints.MapControllers();
             });
+        }
+
+        // List of Controller Services.
+        public void AddServices(IServiceCollection services)
+        {
+            services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<IAppUserService, AppUserService>();
+            services.AddScoped<IWorkSpaceService, WorkSpaceService>();
+            services.AddScoped<IDepartmentService, DepartmentService>();
+            services.AddScoped<IWorkSpaceUserService, WorkSpaceUserService>();
+            services.AddScoped<ITaskLogService, TaskLogService>();
+        }
+
+        // List of Controller Repositories.
+        public void AddRepositories(IServiceCollection services)
+        {
+            services.AddScoped<IAppUserRespository, AppUserRespository>();
+            services.AddScoped<IWorkSpaceRespository, WorkSpaceRespository>();
+            services.AddScoped<IDepartmentRespository, DepartmentRespository>();
+            services.AddScoped<IWorkSpaceUserRepository, WorkSpaceUserRepository>();
+            services.AddScoped<ITaskLogRepository, TaskLogRepository>();
         }
     }
 }

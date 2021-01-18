@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using LimbaBackOffice.ServiceInterfaces.WorkSpaceAsset;
 using LimbaBackOfficeData.DTOs.WorkSpaceAsset;
 using LimbaBackOfficeData.Models.WorkSpaceAsset;
@@ -42,10 +40,10 @@ namespace LimbaBackOffice.Controllers.WorkSpaceAsset
         }
 
         // GET api/<TaskLogsController>/5
-        [HttpGet("user/{workSpaceUserId}")]
-        public List<TaskLogDTO> GetUserTaskLogs(int workSpaceUserId)
+        [HttpPost("user")]
+        public List<TaskLogDTO> GetUserTaskLogs(UserTaskLogsRequest taskRequest)
         {
-            var item = _service.GetUserTaskLogs(workSpaceUserId);
+            var item = _service.GetUserTaskLogs(taskRequest);
             if (item == null)
             {
                 throw new ArgumentException($"No task log found for specified user.");

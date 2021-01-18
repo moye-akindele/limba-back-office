@@ -9,7 +9,7 @@ namespace LimbaBackOfficeData.RepositoryInterfaces.WorkSpaceAsset
     {
         List<TaskLog> Get();
         TaskLog Get(int taskLogId);
-        List<TaskLog> GetUserTaskLogs(int workSpaceUserId);
+        List<TaskLog> GetUserTaskLogs(UserTaskLogsRequest taskRequest);
         TaskLog Create(TaskLog ourTaskLog);
         TaskLog Update(TaskLog ourTaskLog);
         bool Delete(int taskLogId);

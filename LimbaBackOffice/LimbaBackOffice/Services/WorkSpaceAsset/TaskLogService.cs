@@ -61,9 +61,9 @@ namespace LimbaBackOffice.Services.WorkSpaceAsset
             return taskLogDTO;
         }
 
-        public List<TaskLogDTO> GetUserTaskLogs(int workSpaceUserId)
+        public List<TaskLogDTO> GetUserTaskLogs(UserTaskLogsRequest taskRequest)
         {
-            var taskLogs = _respository.GetUserTaskLogs(workSpaceUserId);
+            var taskLogs = _respository.GetUserTaskLogs(taskRequest);
 
             var taskLogList = from taskLog in taskLogs
                               select new TaskLogDTO()

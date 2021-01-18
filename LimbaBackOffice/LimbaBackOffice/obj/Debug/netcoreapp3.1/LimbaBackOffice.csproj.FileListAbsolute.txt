@@ -21,8 +21,6 @@ C:\Users\Moye\source\repos\limba-back-office\LimbaBackOffice\LimbaBackOffice\obj
 C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\obj\Debug\netcoreapp3.1\LimbaBackOffice.csprojAssemblyReference.cache
 C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\obj\Debug\netcoreapp3.1\LimbaBackOffice.AssemblyInfoInputs.cache
 C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\obj\Debug\netcoreapp3.1\LimbaBackOffice.AssemblyInfo.cs
-C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\obj\Debug\netcoreapp3.1\LimbaBackOffice.csproj.CoreCompileInputs.cache
-C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\obj\Debug\netcoreapp3.1\LimbaBackOffice.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
@@ -65,3 +63,13 @@ C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\o
 C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\obj\Debug\netcoreapp3.1\LimbaBackOffice.dll
 C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\obj\Debug\netcoreapp3.1\LimbaBackOffice.pdb
 C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\obj\Debug\netcoreapp3.1\LimbaBackOffice.genruntimeconfig.cache
+C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\bin\Debug\netcoreapp3.1\MailKit.dll
+C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\bin\Debug\netcoreapp3.1\MimeKit.dll
+C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\bin\Debug\netcoreapp3.1\NETCore.MailKit.dll
+C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\bin\Debug\netcoreapp3.1\IdentityModel.dll
+C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\bin\Debug\netcoreapp3.1\IdentityServer4.Storage.dll
+C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\obj\Debug\netcoreapp3.1\LimbaBackOffice.csproj.CoreCompileInputs.cache
+C:\Users\Moye\Documents\Repo\limba-back-office\LimbaBackOffice\LimbaBackOffice\obj\Debug\netcoreapp3.1\LimbaBackOffice.MvcApplicationPartsAssemblyInfo.cache

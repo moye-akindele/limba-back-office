@@ -11,11 +11,12 @@ using System.Text;
 
 namespace LimbaBackOfficeData.Repositories.WorkSpaceAsset
 {
+
     public class TaskLogRepository : ITaskLogRepository
     {
         private readonly IConfiguration _configuration;
         private readonly IDbConnection _connection;
-
+        private const string _dateFormat = "yyyy-MM-dd HH:mm:ss.fff";
         public TaskLogRepository(IConfiguration configuration)
         {
             _configuration = configuration;
@@ -35,17 +36,18 @@ namespace LimbaBackOfficeData.Repositories.WorkSpaceAsset
             return seletedTaskLog;
         }
 
-        public List<TaskLog> GetUserTaskLogs(int workSpaceUserId)
+        public List<TaskLog> GetUserTaskLogs(UserTaskLogsRequest taskRequest)
         {
-            string queryText = @"SELECT * FROM TaskLog WHERE WorkSpaceUserId = " + workSpaceUserId;
+            string queryText = @"SELECT * FROM TaskLog WHERE WorkSpaceUserId = " + taskRequest.WorkSpaceUserId +
+                "AND StartDateTime BETWEEN '" + taskRequest.StartDateTime.ToString(_dateFormat) + "' AND '" + taskRequest.EndDateTime.ToString(_dateFormat) + "'";
             return _connection.Query<TaskLog>(queryText).ToList();
         }
 
         public TaskLog Create(TaskLog ourTaskLog)
         {
-            string queryText = @"INSERT TaskLog([WorkSpaceUserId],[Name],[Category],[StartDate],[StartTime],[EndDate],[EndTime],[Note])
+            string queryText = @"INSERT TaskLog([WorkSpaceUserId],[Name],[Category],[StartDateTime],[EndDateTime],[Note])
             OUTPUT INSERTED.* 
-			values(@WorkSpaceUserId, @Name, @Category, @StartDate, @StartTime, @EndDate, @EndTime, @Note)";
+			values(@WorkSpaceUserId, @Name, @Category, @StartDateTime, @EndDateTime, @Note)";
 
             var createdTaskLog = _connection.QuerySingle<TaskLog>(queryText, ourTaskLog);
 
@@ -62,10 +64,8 @@ namespace LimbaBackOfficeData.Repositories.WorkSpaceAsset
                                 [WorkSpaceUserId] = @WorkSpaceUserId,
 								[Name] = @Name,
 								[Category] = @Category,
-								[StartDate] = @StartDate,
-								[StartTime] = @StartTime,
-                                [EndDate] = @EndDate,
-								[EndTime] = @EndTime,
+								[StartDateTime] = @StartDateTime,
+                                [EndDateTime] = @EndDateTime,
                                 [Note] = @Note
 								WHERE Id = " + ourTaskLog.Id;
 

@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using LimbaBackOffice.ServiceInterfaces;
 using LimbaBackOfficeData.DTOs;
 using LimbaBackOfficeData.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 
 namespace LimbaBackOffice.Controllers
 {
@@ -15,24 +12,33 @@ namespace LimbaBackOffice.Controllers
     public class AuthController : ControllerBase
     {
         private readonly IAuthService _service;
+        public IConfiguration Configuration { get; }
 
-        public AuthController(IAuthService service)
+        public AuthController(IAuthService service, IConfiguration configuration)
         {
             _service = service;
+            Configuration = configuration;
         }
 
         // POST api/<AuthController>
         [HttpPost("login")]
-        public AppUserDTO Post(AuthRequest request)
+        public IActionResult Post(AuthRequest request)
         {
-            var retrievedUser = _service.GetAppUserByEmail(request.Email, request.Password);
-
-            if (retrievedUser == null)
+            if (request == null)
             {
-                throw new ArgumentException($"Failed to find specified user credentials.");
+                // return BadRequest("Invalid client request");
             }
 
-            return retrievedUser;
+            var retrievedResponse = _service.GetAppUserByEmail(request.Email, request.Password);
+
+            if (retrievedResponse == null)
+            {
+                return Unauthorized();
+            }
+            else
+            {
+                return Ok(retrievedResponse);
+            }
         }
 
         // POST api/<AuthController>
@@ -47,6 +53,15 @@ namespace LimbaBackOffice.Controllers
             }
 
             return createdEntry;
+        }
+
+        // POST api/<AuthController>
+        [HttpPost("reset/{emailAddress}")]
+        public bool Post(string emailAddress)
+        {
+            var isResetSuccessful = _service.Reset(emailAddress);
+
+            return isResetSuccessful;
         }
     }
 }

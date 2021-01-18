@@ -11,7 +11,7 @@ namespace LimbaBackOffice.ServiceInterfaces.WorkSpaceAsset
     {
         List<TaskLogDTO> Get();
         TaskLogDTO Get(int taskLogId);
-        List<TaskLogDTO> GetUserTaskLogs(int workSpaceUserId);
+        List<TaskLogDTO> GetUserTaskLogs(UserTaskLogsRequest taskRequest);
         TaskLogDTO Create(TaskLog ourTaskLog);
         TaskLogDTO Update(TaskLog ourTaskLog);
         bool Delete(int taskLogId);

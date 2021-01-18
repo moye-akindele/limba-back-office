@@ -7,5 +7,6 @@ namespace LimbaBackOfficeData.Enums
     public enum TaskType
     {
         TimeLog,
+        Holiday,
     }
 }

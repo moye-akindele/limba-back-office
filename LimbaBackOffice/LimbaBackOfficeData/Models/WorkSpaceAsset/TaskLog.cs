@@ -14,5 +14,6 @@ namespace LimbaBackOfficeData.Models.WorkSpaceAsset
         public DateTime StartDateTime { get; set; }
         public DateTime EndDateTime { get; set; }
         public string Note { get; set; }
+        public TaskStatus Status { get; set; }
     }
 }
